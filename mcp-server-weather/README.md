@@ -79,14 +79,20 @@ The server will start and listen for MCP protocol messages over stdio transport.
 
    ```json
    {
-     "mcpServers": {
-       "weather": {
-         "command": "python",
-         "args": ["/path/to/your/mcp_services/mcp-server-weather/server.py"],
-         "env": {}
-       }
+   "mcpServers": {
+     "weather": {
+       "command": "/absolute/path/to/uv",
+       "args": [
+         "run",
+         "--with",
+         "mcp[cli]",
+         "mcp",
+         "run",
+         "/absolute/path/to/mcp-server-weather/server.py"
+       ]
      }
    }
+}
    ```
 
 2. **Restart Claude Desktop**
@@ -238,5 +244,6 @@ Error responses are returned as descriptive strings that can be presented to use
 - [Open-Meteo API Documentation](https://open-meteo.com/en/docs)
 - [HTTPX Documentation](https://www.python-httpx.org/)
 - [MCP Server Examples](https://github.com/modelcontextprotocol/servers)
+
 
 
