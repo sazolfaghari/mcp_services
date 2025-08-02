@@ -36,7 +36,6 @@ This MCP server provides tools to:
 2. **Create Virtual Environment** (Recommended)
    ```bash
    python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    ```
 
 3. **Install Dependencies**
@@ -50,12 +49,17 @@ This MCP server provides tools to:
 
 To test the server during development:
 
+1. Start the virtual environment.
 ```bash
-# Install MCP Inspector (if not already installed)
-npm install -g @modelcontextprotocol/inspector
-
-# Run the server with MCP Inspector
-npx @modelcontextprotocol/inspector python server.py
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+NOTE: To stop the virtual environment:
+```bash
+ deactivate
+```
+2. Run MCP server in dev mode with the [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
+```bash
+mcp dev server.py
 ```
 
 ### Running the Server Directly
@@ -256,6 +260,7 @@ Error responses are returned as descriptive strings that can be presented to use
 - [Open-Meteo API Documentation](https://open-meteo.com/en/docs)
 - [HTTPX Documentation](https://www.python-httpx.org/)
 - [MCP Server Examples](https://github.com/modelcontextprotocol/servers)
+
 
 
 
