@@ -75,6 +75,7 @@ The server will start and listen for MCP protocol messages over stdio transport.
    Add the server configuration to your Claude Desktop settings file:
    
    **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   
    **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
    ```json
@@ -244,6 +245,7 @@ Error responses are returned as descriptive strings that can be presented to use
 - [Open-Meteo API Documentation](https://open-meteo.com/en/docs)
 - [HTTPX Documentation](https://www.python-httpx.org/)
 - [MCP Server Examples](https://github.com/modelcontextprotocol/servers)
+
 
 
 
