@@ -40,9 +40,26 @@ This MCP server provides tools to:
 
 3. **Install Dependencies**
    ```bash
-   pip install fastmcp httpx
-   ```
+   pip install uv
+   pip install fastmcp httpx 
+   # Download and install nvm:
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+   
+   # in lieu of restarting the shell
+   \. "$HOME/.nvm/nvm.sh"
+   
+   # Download and install Node.js:
+   nvm install 22
+   
+   # Verify the Node.js version:
+   node -v # Should print "v22.18.0".
+   nvm current # Should print "v22.18.0".
+   
+   # Verify npm version:
+   npm -v # Should print "10.9.3".
 
+   npx @modelcontextprotocol/inspector node build/index.js
+   ```
 ## Usage
 
 ### Development Mode with MCP Inspector
@@ -52,6 +69,8 @@ To test the server during development:
 1. Start the virtual environment.
 ```bash
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+uv init
+uv add "mcp[cli]" httpx
 ```
 NOTE: To stop the virtual environment:
 ```bash
@@ -230,18 +249,6 @@ The server is implemented in a single Python file (`server.py`) with the followi
    mcp.run(transport='stdio')
    ```
 
-## Dependencies
-
-Key Python packages used:
-- `fastmcp`: FastMCP framework for building MCP servers
-- `httpx`: Modern async HTTP client for API requests
-- `typing`: Type hints for better code documentation
-
-Install with:
-```bash
-pip install fastmcp httpx
-```
-
 ## Error Handling
 
 The server includes robust error handling for:
@@ -260,6 +267,7 @@ Error responses are returned as descriptive strings that can be presented to use
 - [Open-Meteo API Documentation](https://open-meteo.com/en/docs)
 - [HTTPX Documentation](https://www.python-httpx.org/)
 - [MCP Server Examples](https://github.com/modelcontextprotocol/servers)
+
 
 
 
