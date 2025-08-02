@@ -4,9 +4,7 @@ A Python-based Model Context Protocol (MCP) server built with FastMCP that provi
 
 ## Overview
 
-This MCP server is part of the LinkedIn Learning course "Model Context Protocol (MCP): Hands-On with Agentic AI" and demonstrates how to build practical MCP servers that extend LLM capabilities with real-world data access using the FastMCP framework.
-
-The server provides tools to:
+This MCP server provides tools to:
 - Get current weather conditions for any location using coordinates
 - Retrieve detailed weather forecasts with daily resolution
 - Access weather data using the free Open-Meteo API with proper error handling
@@ -240,4 +238,5 @@ Error responses are returned as descriptive strings that can be presented to use
 - [Open-Meteo API Documentation](https://open-meteo.com/en/docs)
 - [HTTPX Documentation](https://www.python-httpx.org/)
 - [MCP Server Examples](https://github.com/modelcontextprotocol/servers)
+
 
