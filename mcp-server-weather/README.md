@@ -113,23 +113,42 @@ The server will start and listen for MCP protocol messages over stdio transport.
    where uv
    ```
 3. **In `claude_desktop_config.js`**
+
+   MacOS/Linux:
    
    ```json
-   {
-   "mcpServers": {
-     "weather": {
-       "command": "/absolute/path/to/uv",
-       "args": [
-         "run",
-         "--with",
-         "mcp[cli]",
-         "mcp",
-         "run",
-         "/absolute/path/to/mcp-server-weather/server.py"
-       ]
+     {
+     "mcpServers": {
+       "weather": {
+         "command": "uv",
+         "args": [
+           "--directory",
+           "/ABSOLUTE/PATH/TO/PARENT/FOLDER/",
+           "run",
+           "server.py"
+         ]
+       }
      }
    }
-   ```
+```
+
+Windows:
+
+   ```json
+   {
+     "mcpServers": {
+       "weather": {
+         "command": "uv",
+         "args": [
+           "--directory",
+           "C:\\ABSOLUTE\\PATH\\TO\\PARENT\\FOLDER\\",
+           "run",
+           "server.py"
+         ]
+       }
+     }
+   }
+```
 
 4. **Reboot Claude Desktop and use a prompt that will trigger your MCP.**
 
@@ -267,6 +286,7 @@ Error responses are returned as descriptive strings that can be presented to use
 - [Open-Meteo API Documentation](https://open-meteo.com/en/docs)
 - [HTTPX Documentation](https://www.python-httpx.org/)
 - [MCP Server Examples](https://github.com/modelcontextprotocol/servers)
+
 
 
 
