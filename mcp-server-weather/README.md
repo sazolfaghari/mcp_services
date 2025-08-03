@@ -13,7 +13,7 @@ This MCP server provides tools to:
 
 - **Current Weather**: Get real-time weather conditions including temperature, precipitation, wind speed, and weather codes
 - **Weather Forecasts**: Access detailed daily weather forecasts with max/min temperatures, precipitation, and weather codes
-- **Coordinate-Based Queries**: Query weather using precise latitude and longitude coordinates
+- **Location Support**: Query weather for any location worldwide using coordinates or location names
 - **FastMCP Framework**: Built using the modern FastMCP framework for streamlined MCP server development
 - **Robust Error Handling**: Comprehensive error handling with proper HTTP timeouts and fallback responses
 - **No API Key Required**: Uses the free Open-Meteo API service
@@ -165,8 +165,7 @@ The server provides the following MCP tools:
 Get current weather conditions for a specified location.
 
 **Parameters:**
-- `latitude` (float): Latitude coordinate of the location
-- `longitude` (float): Longitude coordinate of the location
+- `location` (string): Location name or coordinates (e.g., `New York`, `latitude:40.7128`,`longitude: -74.0060`)
 
 **Returns:**
 - Current temperature in Celsius
@@ -178,14 +177,14 @@ Get current weather conditions for a specified location.
 **Example:**
 ```
 What's the current weather at coordinates 40.7128, -74.0060? (New York City)
+What's the current weather in San Francisco?
 ```
 
 ### `get_forecast`
 Get weather forecast for a specified location.
 
 **Parameters:**
-- `latitude` (float): Latitude coordinate of the location
-- `longitude` (float): Longitude coordinate of the location
+- `location` (string): Location name or coordinates (e.g., `New York`, `latitude:40.7128`,`longitude: -74.0060`)
 
 **Returns:**
 - Daily forecast data including:
@@ -198,7 +197,8 @@ Get weather forecast for a specified location.
 
 **Example:**
 ```
-Give me a weather forecast for coordinates 51.5074, -0.1278 (London).
+Give me a weather forecast for coordinates 51.5074, -0.1278. (London)
+Give me a 5-day weather forecast for London, UK.
 ```
 
 ## API Integration
@@ -286,6 +286,7 @@ Error responses are returned as descriptive strings that can be presented to use
 - [Open-Meteo API Documentation](https://open-meteo.com/en/docs)
 - [HTTPX Documentation](https://www.python-httpx.org/)
 - [MCP Server Examples](https://github.com/modelcontextprotocol/servers)
+
 
 
 
